@@ -6,7 +6,7 @@
 /*   By: fvastena <fvastena@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/20 16:23:11 by fvastena          #+#    #+#             */
-/*   Updated: 2023/09/26 13:25:41 by fvastena         ###   ########.fr       */
+/*   Updated: 2023/09/26 23:51:33 by fvastena         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,14 +27,12 @@ static void	put_scoreboard_simple(t_data *datas)
 static void	put_scoreboard_full(t_data *datas)
 {
 	char	*total;
-	int		total_size;
 
 	total = NULL;
 	total = create_str(datas, total, "Moves: ", datas->player.nb_moves);
 	total = create_str(datas, total, "    Collectibles: ",
 			datas->player.nb_collect);
 	total = create_str(datas, total, "    Enemies: ", datas->enemy_count);
-	total_size = ft_strlen(total);
 	mlx_string_put(datas->vars.mlx, datas->vars.win,
 		(datas->size_x - 9) / 2 * RES,
 		datas->size_y * RES + RES / 3, 0x000000FF, total);
