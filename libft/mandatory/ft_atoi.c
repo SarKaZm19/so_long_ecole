@@ -6,13 +6,13 @@
 /*   By: fvastena <fvastena@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/24 14:12:50 by fvastena          #+#    #+#             */
-/*   Updated: 2023/09/26 14:23:49 by fvastena         ###   ########.fr       */
+/*   Updated: 2023/09/27 20:55:01 by fvastena         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	 ft_atoi(const char *nptr)
+int	ft_atoi(const char *nptr)
 {
 	long			nb;
 	size_t			i;
