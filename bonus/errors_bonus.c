@@ -6,7 +6,7 @@
 /*   By: fvastena <fvastena@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/14 20:31:10 by fvastena          #+#    #+#             */
-/*   Updated: 2023/09/25 18:46:58 by fvastena         ###   ########.fr       */
+/*   Updated: 2023/09/28 14:09:08 by fvastena         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 void	ft_errors(t_data *datas, char *content, int errcode)
 {
-	ft_printf("Error: ");
+	ft_printf("Error\n");
 	if (errcode == 0)
 		ft_printf("\"%s\". Map should be a .ber file\n", content);
 	else if (errcode == 1)

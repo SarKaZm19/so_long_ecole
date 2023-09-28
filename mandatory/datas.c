@@ -6,7 +6,7 @@
 /*   By: fvastena <fvastena@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/20 16:37:19 by fvastena          #+#    #+#             */
-/*   Updated: 2023/09/25 17:32:33 by fvastena         ###   ########.fr       */
+/*   Updated: 2023/09/28 13:42:03 by fvastena         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -79,4 +79,6 @@ void	init_datas(t_data *datas, char *map_file)
 	verify_content(datas);
 	get_player_datas(datas);
 	verify_path(datas);
+	if (datas->size_x * RES > 1920 || datas->size_y * RES > 1080)
+		ft_errors(datas, NULL, 4);
 }

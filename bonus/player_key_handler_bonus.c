@@ -6,7 +6,7 @@
 /*   By: fvastena <fvastena@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/20 14:39:02 by fvastena          #+#    #+#             */
-/*   Updated: 2023/09/25 14:35:45 by fvastena         ###   ########.fr       */
+/*   Updated: 2023/09/28 14:51:51 by fvastena         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -106,7 +106,7 @@ void	p_move_up(t_data *datas)
 		{
 			if (datas->map[y - 1][x] == 'C')
 				datas->player.nb_collect--;
-			if (datas->map[y - 1][x] == 'V' || datas->map[y][x] == 'A')
+			if (datas->map[y - 1][x] == 'V' || datas->map[y - 1][x] == 'A')
 				enemy_handler(datas, datas->map[y - 1][x]);
 			datas->map[y - 1][x] = 'P';
 			datas->map[y][x] = '0';

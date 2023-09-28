@@ -6,7 +6,7 @@
 /*   By: fvastena <fvastena@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/20 16:37:24 by fvastena          #+#    #+#             */
-/*   Updated: 2023/09/26 13:08:38 by fvastena         ###   ########.fr       */
+/*   Updated: 2023/09/28 14:40:54 by fvastena         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -81,7 +81,6 @@ void	init_datas(t_data *datas, char *map_file);
 
 // errors.c
 void	ft_errors(t_data *datas, char *content, int errcode);
-void	ft_errors2(t_data *datas, int errcode);
 
 // exit_handler.c
 void	exit_handler(t_data *datas, int exit_code);

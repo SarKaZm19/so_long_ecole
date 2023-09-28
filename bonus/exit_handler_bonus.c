@@ -6,7 +6,7 @@
 /*   By: fvastena <fvastena@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/20 16:26:13 by fvastena          #+#    #+#             */
-/*   Updated: 2023/09/26 13:08:27 by fvastena         ###   ########.fr       */
+/*   Updated: 2023/09/28 14:53:36 by fvastena         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,12 +56,5 @@ void	enemy_handler(t_data *datas, char c)
 			enemy_exit_handler(datas, "Enemy defeated\n", 0);
 		else if (c == 'A')
 			enemy_exit_handler(datas, "Antagonist Won\n", 1);
-	}
-	else if (datas->player.transformed == 2)
-	{
-		if (c == 'V')
-			enemy_exit_handler(datas, "Enemy defeated\n", 0);
-		else if (c == 'A')
-			enemy_exit_handler(datas, "Enemy defeated\n", 0);
 	}
 }

@@ -6,7 +6,7 @@
 #    By: fvastena <fvastena@student.s19.be>         +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/09/20 14:39:47 by fvastena          #+#    #+#              #
-#    Updated: 2023/09/26 14:29:53 by fvastena         ###   ########.fr        #
+#    Updated: 2023/09/28 14:42:15 by fvastena         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,7 +16,7 @@ NAME = so_long
 BONUS_NAME = so_long_bonus
 RMF = rm -f
 RMD = rm -rf
-CFLAGS = -Wall -Wextra -Werror
+CFLAGS = -Wall -Wextra -Werror -O3
 HDDIR = -Iincludes
 LIB = -Llibft -llibft
 LIB_INC = -Ilibft/includes

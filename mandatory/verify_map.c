@@ -6,7 +6,7 @@
 /*   By: fvastena <fvastena@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/14 20:54:40 by fvastena          #+#    #+#             */
-/*   Updated: 2023/09/25 16:25:45 by fvastena         ###   ########.fr       */
+/*   Updated: 2023/09/28 13:40:27 by fvastena         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,8 +31,6 @@ void	verify_shape(t_data *datas)
 	if (datas->size_x * datas->size_y < 15 || datas->size_x < 3
 		|| datas->size_y < 3)
 		ft_errors(datas, NULL, 2);
-	if (datas->size_x * RES > 1920 || datas->size_y * RES > 1080)
-		ft_errors(datas, NULL, 4);
 }
 
 void	verify_borders(t_data *datas)
