@@ -6,7 +6,7 @@
 /*   By: fvastena <fvastena@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/20 16:37:24 by fvastena          #+#    #+#             */
-/*   Updated: 2023/09/28 13:34:32 by fvastena         ###   ########.fr       */
+/*   Updated: 2023/09/29 15:15:42 by fvastena         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@
 # include "libft.h"
 # include "so_long_defines.h"
 
-# include <mlx.h>
+# include "mlx.h"
 # include <fcntl.h>
 # include <sys/types.h>
 # include <sys/stat.h>

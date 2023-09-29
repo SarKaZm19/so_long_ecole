@@ -6,7 +6,7 @@
 /*   By: fvastena <fvastena@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/20 14:39:40 by fvastena          #+#    #+#             */
-/*   Updated: 2023/09/26 13:24:01 by fvastena         ###   ########.fr       */
+/*   Updated: 2023/09/29 15:39:34 by fvastena         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,11 +60,11 @@ void	so_long(t_data *datas)
 {
 	datas->vars.mlx = mlx_init();
 	if (!datas->vars.mlx)
-		ft_errors(datas, NULL, 7);
+		ft_errors(datas, NULL, 6);
 	datas->vars.win = mlx_new_window(datas->vars.mlx, datas->size_x * RES,
 			datas->size_y * RES + RES, "So_Long");
 	if (!datas->vars.win)
-		ft_errors(datas, NULL, 8);
+		ft_errors(datas, NULL, 7);
 	get_sprites(datas);
 	show_map(datas);
 	mlx_key_hook(datas->vars.win, key_hook, datas);

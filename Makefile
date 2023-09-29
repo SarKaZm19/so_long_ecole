@@ -6,7 +6,7 @@
 #    By: fvastena <fvastena@student.s19.be>         +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/09/20 14:39:47 by fvastena          #+#    #+#              #
-#    Updated: 2023/09/28 14:42:15 by fvastena         ###   ########.fr        #
+#    Updated: 2023/09/29 15:43:25 by fvastena         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,11 +16,15 @@ NAME = so_long
 BONUS_NAME = so_long_bonus
 RMF = rm -f
 RMD = rm -rf
-CFLAGS = -Wall -Wextra -Werror -O3
+CFLAGS = -Wall -Wextra -Werror -O3 -fsanitize=address -g
 HDDIR = -Iincludes
 LIB = -Llibft -llibft
 LIB_INC = -Ilibft/includes
-MLX_MACOS_FLAGS = -lmlx -framework OpenGL -framework AppKit
+#MLX_MACOS_DIR = ./minilibx
+#MLX_LINUX_DIR = ./mlx_linux
+MLX_LINUX_FLAGS = -Lmlx_linux -lmlx_Linux -L/usr/lib -lXext -lX11 -lm -lz
+MLX_MACOS_FLAGS = -Lminilibx -lmlx -framework OpenGL -framework AppKit
+MLX_INC = -Imlx_linux
 
 #          ----------========== {     SRCS     } ==========----------
 
@@ -68,28 +72,42 @@ VPATH = $(shell find $(SRCS_DIR) $(SRCS_BONUS_DIR) -type d)
 #           ----------========== {    RULES    } ==========----------
 
 all:
-	@$(MAKE) $(NAME)
+	@$(MAKE) -s $(NAME)
 
 bonus:
-	@$(MAKE) $(BONUS_NAME)
+	@$(MAKE) -s $(BONUS_NAME)
 
-$(NAME): $(OBJS_DIR) $(OBJS)
-	@$(MAKE) -C libft
-	@$(CC) $(CFLAGS) $(OBJS) $(LIB) $(MLX_MACOS_FLAGS) -o $@
+$(NAME): $(OBJS_DIR) $(OBJS) | lib_compile
+	@$(MAKE) -sC mlx_linux --no-print-directory
+#	@$(MAKE) -C minilibx --no-print-directory
+	@$(CC) $(CFLAGS) $(OBJS) $(LIB) $(MLX_LINUX_FLAGS) -o $@
+#	@$(CC) $(CFLAGS) $(OBJS) $(LIB) $(MLX_MACOS_FLAGS) -o $@
+#	@$(CC) $(CFLAGS) $(OBJS) $(LIB) -O3 -o $@
 	@printf "\n$(GREEN)$(NAME) created!$(DEFAULT)\n"	
 
-$(BONUS_NAME):  $(OBJS_BONUS_DIR) $(OBJS_BONUS)
-	@$(MAKE) -C libft
-	@$(CC) $(CFLAGS) $(OBJS_BONUS) $(LIB) $(MLX_MACOS_FLAGS) -o $@
+$(BONUS_NAME):  $(OBJS_BONUS_DIR) $(OBJS_BONUS) | lib_compile
+	@$(MAKE) -sC mlx_linux --no-print-directory
+#	@$(MAKE) -C minilibx --no-print-directory
+	@$(CC) $(CFLAGS) $(OBJS_BONUS) $(LIB) $(MLX_LINUX_FLAGS) -o $@
+#	@$(CC) $(CFLAGS) $(OBJS_BONUS) $(LIB) $(MLX_MACOS_FLAGS) -o $@
 	@printf "\n$(GREEN)$(BONUS_NAME) created!$(DEFAULT)\n"
 
 $(OBJS_DIR)%.o:%.c
-	@$(CC) $(CFLAGS) $(HDDIR) $(LIB_INC) -c $< -o $@
+#	@$(CC) $(CFLAGS) $(HDDIR) $(LIB_INC) -c $< -o $@
+	@$(CC) $(CFLAGS) $(HDDIR) $(LIB_INC) -I/usr/include $(MLX_INC) -c $< -o $@ 
+#	$(CC) $(CFLAGS) $(HDDIR) $(LIB_INC) $(MLX_INC) -c $< -o $@
+#	$(CC) $(CFLAGS) $(HDDIR) $(LIB_INC) -c $< -o $@
 	@printf "$(GREEN).$(DEFAULT)"
 
 $(OBJS_BONUS_DIR)%.o:%.c
-	@$(CC) $(CFLAGS) $(HDDIR) $(LIB_INC) -c $< -o $@
+#	@$(CC) $(CFLAGS) $(HDDIR) $(LIB_INC) -c $< -o $@
+	@$(CC) $(CFLAGS) $(HDDIR) $(LIB_INC) -I/usr/include $(MLX_INC) -c $< -o $@ 
+#	$(CC) $(CFLAGS) $(HDDIR) $(LIB_INC) $(MLX_INC) -c $< -o $@
+#	@$(CC) $(CFLAGS) $(HDDIR) -c $< -o $@ 
 	@printf "$(GREEN).$(DEFAULT)"
+
+lib_compile:
+	@$(MAKE) -sC libft
 	
 $(OBJS_DIR):
 	@mkdir -p $(OBJS_DIR)
@@ -98,23 +116,24 @@ $(OBJS_BONUS_DIR):
 	@mkdir -p $(OBJS_BONUS_DIR)
 
 clean:
-	@$(MAKE) -C libft clean
+	@$(MAKE) -sC libft clean
 	@$(RMF) $(OBJS) $(OBJS_BONUS)
 	@$(RMD) $(OBJS_DIR) $(OBJS_BONUS_DIR)
-	@printf "$(YELLOW)object files for $(NAME) && $(BONUS_NAME) cleaned!$(DEFAULT)\n"
+	@printf "$(YELLOW)object files for $(NAME) && $(BONUS_NAME) deleted!$(DEFAULT)\n"
 
 
 fclean:
-	@$(MAKE) clean
-	@$(MAKE) -C libft fclean
+	@$(MAKE) -s clean
+	@$(MAKE) -sC mlx_linux clean
+#	@$(MAKE) -C minilibx clean
 	@$(RMF) $(NAME) $(BONUS_NAME)
-	@printf "$(RED)executables for $(NAME) && $(BONUS_NAME) cleaned!$(DEFAULT)\n"
+	@printf "$(RED)$(NAME) && $(BONUS_NAME) deleted!$(DEFAULT)\n"
 
 re: 
-	@$(MAKE) fclean
-	@$(MAKE) all
+	@$(MAKE) -s fclean
+	@$(MAKE) -s all
 
-.PHONY: all bonus clean fclean re
+.PHONY: all lib_compile bonus clean fclean re
 
 #           ----------========== {    COLORS    } ==========----------
 

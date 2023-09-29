@@ -1,0 +1,240 @@
+bonus/antag_key_handler_bonus.c:	y = datas->antagonist.pos_y;
+bonus/antag_key_handler_bonus.c:	x = datas->antagonist.pos_x;
+bonus/antag_key_handler_bonus.c:	if (datas->map[y][x - 1] == '0' || datas->map[y][x - 1] == 'P')
+bonus/antag_key_handler_bonus.c:		if (datas->map[y][x - 1] == 'P')
+bonus/antag_key_handler_bonus.c:		datas->map[y][x - 1] = 'A';
+bonus/antag_key_handler_bonus.c:		datas->map[y][x] = '0';
+bonus/antag_key_handler_bonus.c:		datas->antagonist.pos_x--;
+bonus/antag_key_handler_bonus.c:	datas->antagonist.facing = 2;
+bonus/antag_key_handler_bonus.c:	y = datas->antagonist.pos_y;
+bonus/antag_key_handler_bonus.c:	x = datas->antagonist.pos_x;
+bonus/antag_key_handler_bonus.c:	if (datas->map[y][x + 1] == '0' || datas->map[y][x + 1] == 'P')
+bonus/antag_key_handler_bonus.c:		if (datas->map[y][x + 1] == 'P')
+bonus/antag_key_handler_bonus.c:		datas->map[y][x + 1] = 'A';
+bonus/antag_key_handler_bonus.c:		datas->map[y][x] = '0';
+bonus/antag_key_handler_bonus.c:		datas->antagonist.pos_x++;
+bonus/antag_key_handler_bonus.c:	datas->antagonist.facing = 0;
+bonus/antag_key_handler_bonus.c:	y = datas->antagonist.pos_y;
+bonus/antag_key_handler_bonus.c:	x = datas->antagonist.pos_x;
+bonus/antag_key_handler_bonus.c:	if (datas->map[y + 1][x] == '0' || datas->map[y + 1][x] == 'P')
+bonus/antag_key_handler_bonus.c:		if (datas->map[y + 1][x] == 'P')
+bonus/antag_key_handler_bonus.c:		datas->map[y + 1][x] = 'A';
+bonus/antag_key_handler_bonus.c:		datas->map[y][x] = '0';
+bonus/antag_key_handler_bonus.c:		datas->antagonist.pos_y++;
+bonus/antag_key_handler_bonus.c:	datas->antagonist.facing = 0;
+bonus/antag_key_handler_bonus.c:	y = datas->antagonist.pos_y;
+bonus/antag_key_handler_bonus.c:	x = datas->antagonist.pos_x;
+bonus/antag_key_handler_bonus.c:	if (datas->map[y - 1][x] == '0' || datas->map[y - 1][x] == 'P')
+bonus/antag_key_handler_bonus.c:		if (datas->map[y - 1][x] == 'P')
+bonus/antag_key_handler_bonus.c:		datas->map[y - 1][x] = 'A';
+bonus/antag_key_handler_bonus.c:		datas->map[y][x] = '0';
+bonus/antag_key_handler_bonus.c:		datas->antagonist.pos_y--;
+bonus/antag_key_handler_bonus.c:	datas->antagonist.facing = 1;
+bonus/datas_bonus.c:	datas->size_y = count_line - 1;
+bonus/datas_bonus.c:	datas->fd = open(map_file, O_RDONLY);
+bonus/datas_bonus.c:	if (datas->fd < 0)
+bonus/datas_bonus.c:	datas->map = get_map(datas);
+bonus/datas_bonus.c:	if (datas->fd >= 0)
+bonus/datas_bonus.c:		close(datas->fd);
+bonus/datas_bonus.c:		datas->fd = -1;
+bonus/datas_bonus.c:	ft_printf("size_y * RES = %d\n", datas->size_y * RES + RES / 3);
+bonus/datas_bonus.c:	if (datas->size_x * RES > 1920 || datas->size_y * RES + RES / 3 > 1080)
+bonus/exit_handler_bonus.c:	if (exit_code == 0 && datas->player.nb_collect == 0)
+bonus/exit_handler_bonus.c:		datas->enemy_count--;
+bonus/exit_handler_bonus.c:	if (datas->player.transformed == 0)
+bonus/exit_handler_bonus.c:	else if (datas->player.transformed == 1)
+bonus/get_img_from_file_bonus.c:		datas->img[i].ptr = mlx_xpm_file_to_image(datas->vars.mlx, img[i],
+bonus/get_img_from_file_bonus.c:				&datas->img[i].width, &datas->img[i].height);
+bonus/get_img_from_file_bonus.c:		if (!datas->img[i].ptr)
+bonus/get_img_from_file_bonus.c:		datas->player.img[i].ptr = mlx_xpm_file_to_image(datas->vars.mlx,
+bonus/get_img_from_file_bonus.c:				p_img[i], &datas->player.img[i].width,
+bonus/get_img_from_file_bonus.c:				&datas->player.img[i].height);
+bonus/get_img_from_file_bonus.c:		if (!datas->player.img[i].ptr)
+bonus/get_img_from_file_bonus.c:		datas->antagonist.img[i].ptr = mlx_xpm_file_to_image(datas->vars.mlx,
+bonus/get_img_from_file_bonus.c:				a_img[i], &datas->antagonist.img[i].width,
+bonus/get_img_from_file_bonus.c:				&datas->antagonist.img[i].height);
+bonus/get_img_from_file_bonus.c:		if (!datas->antagonist.img[i].ptr)
+bonus/get_img_from_file_bonus.c:	datas->c_img[0].ptr = mlx_xpm_file_to_image(datas->vars.mlx,
+bonus/get_img_from_file_bonus.c:			c_img[0], &datas->c_img[0].width, &datas->c_img[1].height);
+bonus/get_img_from_file_bonus.c:	datas->c_img[1].ptr = mlx_xpm_file_to_image(datas->vars.mlx,
+bonus/get_img_from_file_bonus.c:			c_img[1], &datas->c_img[1].width, &datas->c_img[1].height);
+bonus/get_img_from_file_bonus.c:	if (!datas->c_img[0].ptr || !datas->c_img[1].ptr)
+bonus/img_to_win_bonus.c:	total = create_str(datas, total, "Moves: ", datas->player.nb_moves);
+bonus/img_to_win_bonus.c:	mlx_string_put(datas->vars.mlx, datas->vars.win,
+bonus/img_to_win_bonus.c:		(datas->size_x - 2) / 2 * RES, 
+bonus/img_to_win_bonus.c:		datas->size_y * RES + RES / 3, 0x000000FF, total);
+bonus/img_to_win_bonus.c:	total = create_str(datas, total, "Moves: ", datas->player.nb_moves);
+bonus/img_to_win_bonus.c:			datas->player.nb_collect);
+bonus/img_to_win_bonus.c:	total = create_str(datas, total, "    Enemies: ", datas->enemy_count);
+bonus/img_to_win_bonus.c:	mlx_string_put(datas->vars.mlx, datas->vars.win,
+bonus/img_to_win_bonus.c:		(datas->size_x - 9) / 2 * RES,
+bonus/img_to_win_bonus.c:		datas->size_y * RES + RES / 3, 0x000000FF, total);
+bonus/img_to_win_bonus.c:	pos_p = datas->player.pos_x + datas->player.pos_y;
+bonus/img_to_win_bonus.c:	pos_a = datas->antagonist.pos_x + datas->antagonist.pos_y;
+bonus/img_to_win_bonus.c:		mlx_put_image_to_window(datas->vars.mlx, datas->vars.win,
+bonus/img_to_win_bonus.c:			datas->c_img[0].ptr, x * RES, y * RES);
+bonus/img_to_win_bonus.c:		mlx_put_image_to_window(datas->vars.mlx, datas->vars.win,
+bonus/img_to_win_bonus.c:			datas->c_img[1].ptr, x * RES, y * RES);
+bonus/img_to_win_bonus.c:		mlx_put_image_to_window(datas->vars.mlx,
+bonus/img_to_win_bonus.c:			datas->vars.win, datas->img[i].ptr, x * RES, y * RES);
+bonus/img_to_win_bonus.c:	mlx_clear_window(datas->vars.mlx, datas->vars.win);
+bonus/img_to_win_bonus.c:	while (y < datas->size_y)
+bonus/img_to_win_bonus.c:		while (x < datas->size_x)
+bonus/img_to_win_bonus.c:			insert_img_to_map(datas, datas->map[y][x], x, y);
+bonus/img_to_win_bonus.c:/* 	if (datas->size_x >= 9)
+bonus/main_bonus.c:	datas->map = NULL;
+bonus/main_bonus.c:	datas->vars.mlx = NULL;
+bonus/main_bonus.c:	datas->vars.win = NULL;
+bonus/main_bonus.c:	datas->player.transformed = 0;
+bonus/main_bonus.c:	datas->player.facing = 0;
+bonus/main_bonus.c:	datas->antagonist.transformed = 0;
+bonus/main_bonus.c:	datas->player.facing = 0;
+bonus/main_bonus.c:	datas->fd = -1;
+bonus/main_bonus.c:		datas->img[i].ptr = NULL;
+bonus/main_bonus.c:		datas->player.img[i].ptr = NULL;
+bonus/main_bonus.c:		datas->antagonist.img[i].ptr = NULL;
+bonus/main_bonus.c:	datas->c_img[0].ptr = NULL;
+bonus/main_bonus.c:	datas->c_img[1].ptr = NULL;
+bonus/pathfinding_bonus.c:	new_map = malloc(sizeof(char *) * ((datas->size_y) + 1));
+bonus/pathfinding_bonus.c:	while (++i < datas->size_y)
+bonus/pathfinding_bonus.c:		new_map[i] = ft_strdup(datas->map[i]);
+bonus/pathfinding_bonus.c:	collect = datas->player.nb_collect + 1;
+bonus/pathfinding_bonus.c:	i = datas->player.pos_x;
+bonus/pathfinding_bonus.c:	j = datas->player.pos_y;
+bonus/player_bonus.c:	while (++y < datas->size_y)
+bonus/player_bonus.c:		while (++x < datas->size_x)
+bonus/player_bonus.c:			if (datas->map[y][x] == 'P')
+bonus/player_bonus.c:				datas->player.pos_x = x;
+bonus/player_bonus.c:				datas->player.pos_y = y;
+bonus/player_bonus.c:				datas->player.nb_moves = 0;
+bonus/player_bonus.c:				datas->nb_player = 1;
+bonus/player_bonus.c:	while (++y < datas->size_y)
+bonus/player_bonus.c:		while (++x < datas->size_x)
+bonus/player_bonus.c:			if (datas->map[y][x] == 'A')
+bonus/player_bonus.c:				datas->antagonist.pos_x = x;
+bonus/player_bonus.c:				datas->antagonist.pos_y = y;
+bonus/player_bonus.c:				datas->nb_player = 2;
+bonus/player_key_handler_bonus.c:	y = datas->player.pos_y;
+bonus/player_key_handler_bonus.c:	x = datas->player.pos_x;
+bonus/player_key_handler_bonus.c:	if (datas->map[y][x - 1] != '1')
+bonus/player_key_handler_bonus.c:		if (!(datas->map[y][x - 1] == 'E'))
+bonus/player_key_handler_bonus.c:			if (datas->map[y][x - 1] == 'C')
+bonus/player_key_handler_bonus.c:				datas->player.nb_collect--;
+bonus/player_key_handler_bonus.c:			if (datas->map[y][x - 1] == 'V' || datas->map[y][x - 1] == 'A')
+bonus/player_key_handler_bonus.c:				enemy_handler(datas, datas->map[y][x - 1]);
+bonus/player_key_handler_bonus.c:			datas->map[y][x - 1] = 'P';
+bonus/player_key_handler_bonus.c:			datas->map[y][x] = '0';
+bonus/player_key_handler_bonus.c:			datas->player.pos_x--;
+bonus/player_key_handler_bonus.c:			if (datas->player.nb_moves != INT_MAX)
+bonus/player_key_handler_bonus.c:				datas->player.nb_moves++;
+bonus/player_key_handler_bonus.c:	datas->player.facing = 2;
+bonus/player_key_handler_bonus.c:	y = datas->player.pos_y;
+bonus/player_key_handler_bonus.c:	x = datas->player.pos_x;
+bonus/player_key_handler_bonus.c:	if (datas->map[y][x + 1] != '1')
+bonus/player_key_handler_bonus.c:		if (!(datas->map[y][x + 1] == 'E'))
+bonus/player_key_handler_bonus.c:			if (datas->map[y][x + 1] == 'C')
+bonus/player_key_handler_bonus.c:				datas->player.nb_collect--;
+bonus/player_key_handler_bonus.c:			if (datas->map[y][x + 1] == 'V' || datas->map[y][x + 1] == 'A')
+bonus/player_key_handler_bonus.c:				enemy_handler(datas, datas->map[y][x + 1]);
+bonus/player_key_handler_bonus.c:			datas->map[y][x + 1] = 'P';
+bonus/player_key_handler_bonus.c:			datas->map[y][x] = '0';
+bonus/player_key_handler_bonus.c:			datas->player.pos_x++;
+bonus/player_key_handler_bonus.c:			if (datas->player.nb_moves != INT_MAX)
+bonus/player_key_handler_bonus.c:				datas->player.nb_moves++;
+bonus/player_key_handler_bonus.c:	datas->player.facing = 0;
+bonus/player_key_handler_bonus.c:	y = datas->player.pos_y;
+bonus/player_key_handler_bonus.c:	x = datas->player.pos_x;
+bonus/player_key_handler_bonus.c:	if (datas->map[y + 1][x] != '1')
+bonus/player_key_handler_bonus.c:		if (!(datas->map[y + 1][x] == 'E'))
+bonus/player_key_handler_bonus.c:			if (datas->map[y + 1][x] == 'C')
+bonus/player_key_handler_bonus.c:				datas->player.nb_collect--;
+bonus/player_key_handler_bonus.c:			if (datas->map[y + 1][x] == 'V' || datas->map[y + 1][x] == 'A')
+bonus/player_key_handler_bonus.c:				enemy_handler(datas, datas->map[y + 1][x]);
+bonus/player_key_handler_bonus.c:			datas->map[y + 1][x] = 'P';
+bonus/player_key_handler_bonus.c:			datas->map[y][x] = '0';
+bonus/player_key_handler_bonus.c:			datas->player.pos_y++;
+bonus/player_key_handler_bonus.c:			if (datas->player.nb_moves != INT_MAX)
+bonus/player_key_handler_bonus.c:				datas->player.nb_moves++;
+bonus/player_key_handler_bonus.c:	datas->player.facing = 0;
+bonus/player_key_handler_bonus.c:	y = datas->player.pos_y;
+bonus/player_key_handler_bonus.c:	x = datas->player.pos_x;
+bonus/player_key_handler_bonus.c:	if (datas->map[y - 1][x] != '1')
+bonus/player_key_handler_bonus.c:		if (!(datas->map[y - 1][x] == 'E'))
+bonus/player_key_handler_bonus.c:			if (datas->map[y - 1][x] == 'C')
+bonus/player_key_handler_bonus.c:				datas->player.nb_collect--;
+bonus/player_key_handler_bonus.c:			if (datas->map[y - 1][x] == 'V' || datas->map[y - 1][x] == 'A')
+bonus/player_key_handler_bonus.c:				enemy_handler(datas, datas->map[y - 1][x]);
+bonus/player_key_handler_bonus.c:			datas->map[y - 1][x] = 'P';
+bonus/player_key_handler_bonus.c:			datas->map[y][x] = '0';
+bonus/player_key_handler_bonus.c:			datas->player.pos_y--;
+bonus/player_key_handler_bonus.c:			if (datas->player.nb_moves != INT_MAX)
+bonus/player_key_handler_bonus.c:				datas->player.nb_moves++;
+bonus/player_key_handler_bonus.c:	datas->player.facing = 1;
+bonus/players_bonus.c:	while (++y < datas->size_y)
+bonus/players_bonus.c:		while (++x < datas->size_x)
+bonus/players_bonus.c:			if (datas->map[y][x] == 'P')
+bonus/players_bonus.c:				datas->player.pos_x = x;
+bonus/players_bonus.c:				datas->player.pos_y = y;
+bonus/players_bonus.c:				datas->player.nb_moves = 0;
+bonus/players_bonus.c:				datas->player.transformed = 0;
+bonus/players_bonus.c:				datas->player.facing = 0;
+bonus/players_bonus.c:				datas->nb_player = 1;
+bonus/players_bonus.c:	while (++y < datas->size_y)
+bonus/players_bonus.c:		while (++x < datas->size_x)
+bonus/players_bonus.c:			if (datas->map[y][x] == 'A')
+bonus/players_bonus.c:				datas->antagonist.pos_x = x;
+bonus/players_bonus.c:				datas->antagonist.pos_y = y;
+bonus/players_bonus.c:				datas->antagonist.nb_moves = 0;
+bonus/players_bonus.c:				datas->antagonist.transformed = 0;
+bonus/players_bonus.c:				datas->antagonist.facing = 0;
+bonus/players_bonus.c:				datas->nb_player = 2;
+bonus/put_players_to_win_bonus.c:	if (datas->player.facing == 0)
+bonus/put_players_to_win_bonus.c:		mlx_put_image_to_window(datas->vars.mlx, datas->vars.win,
+bonus/put_players_to_win_bonus.c:			datas->player.img[0].ptr, x * RES, y * RES);
+bonus/put_players_to_win_bonus.c:	else if (datas->player.facing == 1)
+bonus/put_players_to_win_bonus.c:		mlx_put_image_to_window(datas->vars.mlx, datas->vars.win,
+bonus/put_players_to_win_bonus.c:			datas->player.img[1].ptr, x * RES, y * RES);
+bonus/put_players_to_win_bonus.c:		mlx_put_image_to_window(datas->vars.mlx, datas->vars.win,
+bonus/put_players_to_win_bonus.c:			datas->player.img[2].ptr, x * RES, y * RES);
+bonus/put_players_to_win_bonus.c:	if (datas->player.facing == 0)
+bonus/put_players_to_win_bonus.c:		mlx_put_image_to_window(datas->vars.mlx, datas->vars.win,
+bonus/put_players_to_win_bonus.c:			datas->player.img[3].ptr, x * RES, y * RES);
+bonus/put_players_to_win_bonus.c:	else if (datas->player.facing == 1)
+bonus/put_players_to_win_bonus.c:		mlx_put_image_to_window(datas->vars.mlx, datas->vars.win,
+bonus/put_players_to_win_bonus.c:			datas->player.img[4].ptr, x * RES, y * RES);
+bonus/put_players_to_win_bonus.c:		mlx_put_image_to_window(datas->vars.mlx, datas->vars.win,
+bonus/put_players_to_win_bonus.c:			datas->player.img[5].ptr, x * RES, y * RES);
+bonus/put_players_to_win_bonus.c:	if (!datas->player.transformed)
+bonus/put_players_to_win_bonus.c:	if (datas->antagonist.facing == 0)
+bonus/put_players_to_win_bonus.c:		mlx_put_image_to_window(datas->vars.mlx, datas->vars.win,
+bonus/put_players_to_win_bonus.c:			datas->antagonist.img[0].ptr, x * RES, y * RES);
+bonus/put_players_to_win_bonus.c:	else if (datas->antagonist.facing == 1)
+bonus/put_players_to_win_bonus.c:		mlx_put_image_to_window(datas->vars.mlx, datas->vars.win,
+bonus/put_players_to_win_bonus.c:			datas->antagonist.img[1].ptr, x * RES, y * RES);
+bonus/put_players_to_win_bonus.c:		mlx_put_image_to_window(datas->vars.mlx, datas->vars.win,
+bonus/put_players_to_win_bonus.c:			datas->antagonist.img[2].ptr, x * RES, y * RES);
+bonus/read_bonus.c:		ret = read(datas->fd, &buf, 1);
+bonus/so_long_bonus.c:	if (datas->nb_player == 2)
+bonus/so_long_bonus.c:	if (datas->player.transformed == 0 && datas->player.nb_collect == 0)
+bonus/so_long_bonus.c:		datas->player.transformed = 1;
+bonus/so_long_bonus.c:	datas->vars.mlx = mlx_init();
+bonus/so_long_bonus.c:	if (!datas->vars.mlx)
+bonus/so_long_bonus.c:	datas->vars.win = mlx_new_window(datas->vars.mlx, datas->size_x * RES,
+bonus/so_long_bonus.c:			datas->size_y * RES + RES, "So_Long");
+bonus/so_long_bonus.c:	if (!datas->vars.win)
+bonus/so_long_bonus.c:	mlx_key_hook(datas->vars.win, key_hook, datas);
+bonus/so_long_bonus.c:	mlx_hook(datas->vars.win, 17, 0, close_btn, datas);
+bonus/so_long_bonus.c:	mlx_loop(datas->vars.mlx);
+bonus/verify_map_bonus.c:	datas->size_x = ft_strlen(datas->map[0]) - 1;
+bonus/verify_map_bonus.c:	while (datas->map[y])
+bonus/verify_map_bonus.c:		while (datas->map[y][x] && datas->map[y][x] != '\n')
+bonus/verify_map_bonus.c:		if (x != datas->size_x)
+bonus/verify_map_bonus.c:	while (++i < datas->size_x)
+bonus/verify_map_bonus.c:		if (datas->map[0][i] != '1' || datas->map[datas->size_y - 1][i] != '1')
+bonus/verify_map_bonus.c:	while (++i < datas->size_y)
+bonus/verify_map_bonus.c:		if (datas->map[i][0] != '1' || datas->map[i][datas->size_x - 1] != '1')
+bonus/verify_map_bonus.c:	while (++y < datas->size_y)
+bonus/verify_map_bonus.c:		while (++x < datas->size_x)
+bonus/verify_map_bonus.c:			if (!verify_item(datas->map[y][x], &content))
+bonus/verify_map_bonus.c:	datas->player.nb_collect = content.c;
+bonus/verify_map_bonus.c:	datas->enemy_count = content.v;

@@ -6,7 +6,7 @@
 /*   By: fvastena <fvastena@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/14 20:43:51 by fvastena          #+#    #+#             */
-/*   Updated: 2023/09/20 19:24:33 by fvastena         ###   ########.fr       */
+/*   Updated: 2023/09/29 15:23:24 by fvastena         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,8 @@ static char	*ft_add_buf_to_line(t_data *datas, char *line, char c)
 	if (c == '\0')
 		return (line);
 	len_line = ft_strlen(line);
+	if (len_line * RES > 1920)
+		ft_errors(datas, NULL, 3);
 	new_line = malloc(sizeof(char) * (len_line + 2));
 	if (!new_line)
 		ft_errors(datas, "malloc", 1);

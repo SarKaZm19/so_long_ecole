@@ -6,7 +6,7 @@
 /*   By: fvastena <fvastena@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/21 12:26:26 by fvastena          #+#    #+#             */
-/*   Updated: 2023/09/25 19:08:48 by fvastena         ###   ########.fr       */
+/*   Updated: 2023/09/29 16:04:37 by fvastena         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,7 +44,11 @@ static char	**get_map(t_data *datas)
 	map[0] = ft_read(datas);
 	count_line = 1;
 	while (map[count_line - 1])
+	{
+		if (count_line * RES + RES > 1080)
+			ft_errors(datas, NULL, 3);
 		map = add_line(datas, map, ft_read(datas), &count_line);
+	}
 	datas->size_y = count_line - 1;
 	return (map);
 }

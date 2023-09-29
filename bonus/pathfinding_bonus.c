@@ -6,7 +6,7 @@
 /*   By: fvastena <fvastena@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/20 14:22:49 by fvastena          #+#    #+#             */
-/*   Updated: 2023/09/28 13:53:00 by fvastena         ###   ########.fr       */
+/*   Updated: 2023/09/29 15:39:09 by fvastena         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -89,7 +89,7 @@ void	verify_path(t_data *datas)
 	{
 		ft_free_strs_tab(map_clone);
 		ft_free_strs_tab(map_clone2);
-		ft_errors(datas, NULL, 10);
+		ft_errors(datas, NULL, 9);
 	}
 	ft_free_strs_tab(map_clone);
 	ft_free_strs_tab(map_clone2);

@@ -6,7 +6,7 @@
 /*   By: fvastena <fvastena@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/20 16:37:19 by fvastena          #+#    #+#             */
-/*   Updated: 2023/09/28 13:42:03 by fvastena         ###   ########.fr       */
+/*   Updated: 2023/09/29 16:02:08 by fvastena         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,7 +44,11 @@ static char	**get_map(t_data *datas)
 	map[0] = ft_read(datas);
 	count_line = 1;
 	while (map[count_line - 1])
+	{
+		if (count_line * RES > 1080)
+			ft_errors(datas, NULL, 3);
 		map = add_line(datas, map, ft_read(datas), &count_line);
+	}
 	datas->size_y = count_line - 1;
 	return (map);
 }
@@ -79,6 +83,4 @@ void	init_datas(t_data *datas, char *map_file)
 	verify_content(datas);
 	get_player_datas(datas);
 	verify_path(datas);
-	if (datas->size_x * RES > 1920 || datas->size_y * RES > 1080)
-		ft_errors(datas, NULL, 4);
 }

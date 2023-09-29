@@ -6,7 +6,7 @@
 /*   By: fvastena <fvastena@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/20 16:23:11 by fvastena          #+#    #+#             */
-/*   Updated: 2023/09/21 21:03:33 by fvastena         ###   ########.fr       */
+/*   Updated: 2023/09/29 15:34:37 by fvastena         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,8 +34,6 @@ void	show_map(t_data *datas)
 	int	y;
 
 	y = 0;
-	if (datas->player.nb_moves > INT_MAX)
-		ft_errors(datas, NULL, 11);
 	while (y < datas->size_y)
 	{
 		x = 0;
