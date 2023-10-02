@@ -84,5 +84,10 @@ void	init_datas(t_data *datas, char *map_file)
 	get_player_datas(datas);
 	get_antag_datas(datas);
 	verify_path(datas);
+	ft_printf("size = %d\n", datas->size_x * datas->size_y);
 	datas->frame = 0;
+	datas->frame_max = (50000 / (datas->size_y + datas->size_x));
+	if (datas->frame_max < 0)
+		datas->frame_max *= -1;
+	ft_printf("frame_max = %d\n", datas->frame_max);
 }
