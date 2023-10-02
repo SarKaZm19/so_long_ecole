@@ -1,12 +1,12 @@
 # **************************************************************************** #
 #                                                                              #
 #                                                         :::      ::::::::    #
-#    Makefile                                           :+:      :+:    :+:    #
+#    Makefile_f                                         :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
 #    By: fvastena <fvastena@student.s19.be>         +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/09/20 14:39:47 by fvastena          #+#    #+#              #
-#    Updated: 2023/09/28 14:42:15 by fvastena         ###   ########.fr        #
+#    Updated: 2023/10/02 22:02:56 by fvastena         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -49,7 +49,9 @@ BONUS_SRCS = 		antag_key_handler_bonus.c \
 					player_key_handler_bonus.c \
 					put_players_to_win_bonus.c \
 					read_bonus.c \
+					render_bonus.c \
 					so_long_bonus.c \
+					time_bonus.c \
 					utils_bonus.c \
 					verify_map_bonus.c	
 

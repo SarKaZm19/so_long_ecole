@@ -6,7 +6,7 @@
 /*   By: fvastena <fvastena@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/21 12:26:26 by fvastena          #+#    #+#             */
-/*   Updated: 2023/10/02 13:56:42 by fvastena         ###   ########.fr       */
+/*   Updated: 2023/10/02 21:41:55 by fvastena         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -84,10 +84,6 @@ void	init_datas(t_data *datas, char *map_file)
 	get_player_datas(datas);
 	get_antag_datas(datas);
 	verify_path(datas);
-	ft_printf("size = %d\n", datas->size_x * datas->size_y);
-	datas->frame = 0;
-	datas->frame_max = (50000 / (datas->size_y + datas->size_x));
-	if (datas->frame_max < 0)
-		datas->frame_max *= -1;
-	ft_printf("frame_max = %d\n", datas->frame_max);
+	datas->start_time = 0;
+	datas->elapsed = 0;
 }

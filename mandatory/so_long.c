@@ -6,7 +6,7 @@
 /*   By: fvastena <fvastena@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/20 14:39:40 by fvastena          #+#    #+#             */
-/*   Updated: 2023/10/02 14:44:04 by fvastena         ###   ########.fr       */
+/*   Updated: 2023/10/02 18:26:57 by fvastena         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,16 +27,17 @@ void	escape_key(t_data *datas)
 
 static int	key_hook(int keycode, t_data *datas)
 {
-	if (keycode == 13)
+	if (keycode == 13 || keycode == 122)
 		move_up(datas);
-	else if (keycode == 0)
+	else if (keycode == 0 || keycode == 113)
 		move_left(datas);
-	else if (keycode == 1)
+	else if (keycode == 1 || keycode == 115)
 		move_down(datas);
-	else if (keycode == 2)
+	else if (keycode == 2 || keycode == 100)
 		move_right(datas);
-	else if (keycode == 53)
+	else if (keycode == 53 || keycode == 65307)
 		escape_key(datas);
+	//show_map(datas);
 	return (0);
 }
 
@@ -72,6 +73,8 @@ void	so_long(t_data *datas)
 	if (!datas->vars.win)
 		ft_errors(datas, NULL, 7);
 	get_sprites(datas);
+	//show_map(datas);
+	//mlx_key_hook(datas->vars.win, key_hook, datas);
 	mlx_hook(datas->vars.win, 02, 1L<<0, key_hook, datas);
 	mlx_hook(datas->vars.win, 17, 0, close_btn, datas);
 	mlx_loop_hook(datas->vars.mlx, render, datas);

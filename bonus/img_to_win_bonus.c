@@ -6,7 +6,7 @@
 /*   By: fvastena <fvastena@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/20 16:23:11 by fvastena          #+#    #+#             */
-/*   Updated: 2023/10/02 14:33:57 by fvastena         ###   ########.fr       */
+/*   Updated: 2023/10/02 21:39:54 by fvastena         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,23 +41,22 @@ static void	put_scoreboard_full(t_data *datas)
 
 static void	put_collect_img(t_data *datas, int x, int y)
 {
-	if (datas->frame <= 3000)
+	datas->elapsed = gettime(datas) - datas->start_time;
+	if (datas->elapsed < 1000)
 	{
 		mlx_put_image_to_window(datas->vars.mlx, datas->vars.win,
 			datas->c_img[0].ptr, x * RES, y * RES);
-		datas->frame++;
 	}
-	else if (datas->frame < 6000)
+	else if (datas->elapsed < 2000)
 	{
 		mlx_put_image_to_window(datas->vars.mlx, datas->vars.win,
 			datas->c_img[1].ptr, x * RES, y * RES);
-		datas->frame++;
 	}
-	else if (datas->frame == 6000)
+	else if (datas->elapsed >= 2000)
 	{
 		mlx_put_image_to_window(datas->vars.mlx, datas->vars.win,
 			datas->c_img[1].ptr, x * RES, y * RES);
-		datas->frame = 0;
+		datas->start_time = gettime(datas);
 	}
 }
 
