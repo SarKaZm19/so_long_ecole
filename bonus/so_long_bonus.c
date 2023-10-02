@@ -6,7 +6,7 @@
 /*   By: fvastena <fvastena@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/20 14:39:40 by fvastena          #+#    #+#             */
-/*   Updated: 2023/10/02 14:34:09 by fvastena         ###   ########.fr       */
+/*   Updated: 2023/10/02 14:43:36 by fvastena         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,13 +21,13 @@ static int	close_btn(t_data *datas)
 
 static void	player_key_hook(int keycode, t_data *datas)
 {
-	if (keycode == 13 || keycode == 122)
+	if (keycode == 13)
 		p_move_up(datas);
-	if (keycode == 0 || keycode == 113)
+	if (keycode == 0)
 		p_move_left(datas);
-	if (keycode == 1 || keycode == 115)
+	if (keycode == 1)
 		p_move_down(datas);
-	if (keycode == 2 || keycode == 100)
+	if (keycode == 2)
 		p_move_right(datas);
 }
 
@@ -45,7 +45,7 @@ static void	antagonist_key_hook(int keycode, t_data *datas)
 
 static int	key_hook(int keycode, t_data *datas)
 {
-	if (keycode == 53 || keycode == 65307)
+	if (keycode == 53)
 		exit_handler(datas, 1);
 	player_key_hook(keycode, datas);
 	if (datas->nb_player == 2)

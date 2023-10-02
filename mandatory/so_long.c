@@ -6,7 +6,7 @@
 /*   By: fvastena <fvastena@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/20 14:39:40 by fvastena          #+#    #+#             */
-/*   Updated: 2023/10/02 14:34:33 by fvastena         ###   ########.fr       */
+/*   Updated: 2023/10/02 14:44:04 by fvastena         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,15 +27,15 @@ void	escape_key(t_data *datas)
 
 static int	key_hook(int keycode, t_data *datas)
 {
-	if (keycode == 13 || keycode == 122)
+	if (keycode == 13)
 		move_up(datas);
-	else if (keycode == 0 || keycode == 113)
+	else if (keycode == 0)
 		move_left(datas);
-	else if (keycode == 1 || keycode == 115)
+	else if (keycode == 1)
 		move_down(datas);
-	else if (keycode == 2 || keycode == 100)
+	else if (keycode == 2)
 		move_right(datas);
-	else if (keycode == 53 || keycode == 65307)
+	else if (keycode == 53)
 		escape_key(datas);
 	return (0);
 }
