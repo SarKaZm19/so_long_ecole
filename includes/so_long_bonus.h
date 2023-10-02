@@ -63,6 +63,7 @@ typedef struct s_data
 	int			enemy_count;
 	int			nb_player;
 	int			frame;
+	int			frame_max;
 	char		**map;
 	t_cont		content;
 	t_vars		vars;
