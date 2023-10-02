@@ -6,7 +6,7 @@
 /*   By: fvastena <fvastena@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/20 14:39:40 by fvastena          #+#    #+#             */
-/*   Updated: 2023/09/29 15:35:42 by fvastena         ###   ########.fr       */
+/*   Updated: 2023/10/02 14:34:33 by fvastena         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,6 @@ static int	key_hook(int keycode, t_data *datas)
 		move_right(datas);
 	else if (keycode == 53 || keycode == 65307)
 		escape_key(datas);
-	show_map(datas);
 	return (0);
 }
 
@@ -57,6 +56,12 @@ static void	get_sprites(t_data *datas)
 	}
 }
 
+int	render(t_data *datas)
+{
+	show_map(datas);
+	return (0);
+}
+
 void	so_long(t_data *datas)
 {
 	datas->vars.mlx = mlx_init();
@@ -67,8 +72,8 @@ void	so_long(t_data *datas)
 	if (!datas->vars.win)
 		ft_errors(datas, NULL, 7);
 	get_sprites(datas);
-	show_map(datas);
-	mlx_key_hook(datas->vars.win, key_hook, datas);
+	mlx_hook(datas->vars.win, 02, 1L<<0, key_hook, datas);
 	mlx_hook(datas->vars.win, 17, 0, close_btn, datas);
+	mlx_loop_hook(datas->vars.mlx, render, datas);
 	mlx_loop(datas->vars.mlx);
 }

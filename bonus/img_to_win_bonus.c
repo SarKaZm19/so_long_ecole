@@ -6,7 +6,7 @@
 /*   By: fvastena <fvastena@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/20 16:23:11 by fvastena          #+#    #+#             */
-/*   Updated: 2023/09/29 16:03:06 by fvastena         ###   ########.fr       */
+/*   Updated: 2023/10/02 14:33:57 by fvastena         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,20 +41,23 @@ static void	put_scoreboard_full(t_data *datas)
 
 static void	put_collect_img(t_data *datas, int x, int y)
 {
-	int	pos_p;
-	int	pos_a;
-
-	pos_p = datas->player.pos_x + datas->player.pos_y;
-	pos_a = datas->antagonist.pos_x + datas->antagonist.pos_y;
-	if ((pos_p + pos_a) % 2)
+	if (datas->frame <= 3000)
 	{
 		mlx_put_image_to_window(datas->vars.mlx, datas->vars.win,
 			datas->c_img[0].ptr, x * RES, y * RES);
+		datas->frame++;
 	}
-	else
+	else if (datas->frame < 6000)
 	{
 		mlx_put_image_to_window(datas->vars.mlx, datas->vars.win,
 			datas->c_img[1].ptr, x * RES, y * RES);
+		datas->frame++;
+	}
+	else if (datas->frame == 6000)
+	{
+		mlx_put_image_to_window(datas->vars.mlx, datas->vars.win,
+			datas->c_img[1].ptr, x * RES, y * RES);
+		datas->frame = 0;
 	}
 }
 

@@ -6,7 +6,7 @@
 /*   By: fvastena <fvastena@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/20 16:37:24 by fvastena          #+#    #+#             */
-/*   Updated: 2023/09/28 14:40:54 by fvastena         ###   ########.fr       */
+/*   Updated: 2023/10/02 12:49:18 by fvastena         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,6 +62,7 @@ typedef struct s_data
 	int			color;
 	int			enemy_count;
 	int			nb_player;
+	int			frame;
 	char		**map;
 	t_cont		content;
 	t_vars		vars;
