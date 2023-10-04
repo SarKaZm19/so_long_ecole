@@ -6,7 +6,7 @@
 /*   By: fvastena <fvastena@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/20 16:37:24 by fvastena          #+#    #+#             */
-/*   Updated: 2023/10/02 12:49:04 by fvastena         ###   ########.fr       */
+/*   Updated: 2023/10/04 12:24:45 by fvastena         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@
 # include "libft.h"
 # include "so_long_defines.h"
 
-# include "mlx.h"
+# include <mlx.h>
 # include <fcntl.h>
 # include <sys/types.h>
 # include <sys/stat.h>
@@ -81,6 +81,9 @@ void	get_player_datas(t_data *datas);
 
 // read.c
 char	*ft_read(t_data *datas);
+
+// render.c
+int		render(t_data *datas);
 
 // so_long.c
 void	so_long(t_data *datas);

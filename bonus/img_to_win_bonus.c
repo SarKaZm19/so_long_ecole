@@ -6,7 +6,7 @@
 /*   By: fvastena <fvastena@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/20 16:23:11 by fvastena          #+#    #+#             */
-/*   Updated: 2023/10/02 21:39:54 by fvastena         ###   ########.fr       */
+/*   Updated: 2023/10/04 12:20:39 by fvastena         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -103,7 +103,7 @@ void	show_map(t_data *datas)
 		}
 		y++;
 	}
- 	if (datas->size_x >= 9)
+	if (datas->size_x >= 9)
 		put_scoreboard_full(datas);
 	else
 		put_scoreboard_simple(datas);

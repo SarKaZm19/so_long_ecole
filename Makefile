@@ -1,12 +1,12 @@
 # **************************************************************************** #
 #                                                                              #
 #                                                         :::      ::::::::    #
-#    Makefile_f                                         :+:      :+:    :+:    #
+#    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
 #    By: fvastena <fvastena@student.s19.be>         +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/09/20 14:39:47 by fvastena          #+#    #+#              #
-#    Updated: 2023/10/02 22:02:56 by fvastena         ###   ########.fr        #
+#    Updated: 2023/10/04 12:24:36 by fvastena         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -33,6 +33,7 @@ MANDATORY_SRCS =	main.c \
 					pathfinding.c \
 					player.c \
 					read.c \
+					render.c \
 					so_long.c \
 					verify_map.c
 
@@ -45,8 +46,8 @@ BONUS_SRCS = 		antag_key_handler_bonus.c \
 					img_to_win_bonus.c \
 					main_bonus.c \
 					pathfinding_bonus.c \
-					players_bonus.c \
 					player_key_handler_bonus.c \
+					players_bonus.c \
 					put_players_to_win_bonus.c \
 					read_bonus.c \
 					render_bonus.c \

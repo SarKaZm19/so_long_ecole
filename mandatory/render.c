@@ -1,22 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   time_bonus.c                                       :+:      :+:    :+:   */
+/*   render.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: fvastena <fvastena@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/10/02 20:48:53 by fvastena          #+#    #+#             */
-/*   Updated: 2023/10/04 12:12:14 by fvastena         ###   ########.fr       */
+/*   Created: 2023/10/04 12:04:39 by fvastena          #+#    #+#             */
+/*   Updated: 2023/10/04 12:05:52 by fvastena         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "so_long_bonus.h"
+#include "so_long.h"
 
-unsigned long	gettime(t_data *datas)
+int	render(t_data *datas)
 {
-	struct timeval	tv;
-
-	if (gettimeofday(&tv, NULL) != 0)
-		ft_errors(datas, "gettimeofday", 1);
-	return ((tv.tv_sec * 1000) + (tv.tv_usec / 1000));
+	show_map(datas);
+	return (0);
 }
